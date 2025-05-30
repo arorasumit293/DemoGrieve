@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grievance Portal 💌</title>
+  <link rel="stylesheet" href="style.css" />
+  <script
+    type="text/javascript"
+    async
+    src="https://tenor.com/embed.js"
+  ></script>
+</head>
+<body>
+  <div id="loginBox" class="login-box">
+    <h2>Welcome</h2>
+    <h3>Pleaseee Ma'am Proceed</h3>
+  
+
+      <div class="tenor-gif-embed" style="margin: 0 auto; display: block;" data-postid="11266936826464471605" data-share-method="host" data-aspect-ratio="1.07023" data-width="200px">
+        <a href="https://tenor.com/view/cat-gif-11266936826464471605"></a>
+        <a href="https://tenor.com/search/cat-stickers"></a>
+   
+    </div>
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="checkLogin()">Enter</button>
+  </div>
+
+ <div id="popup" class="popup hidden">
+  <div class="popup-content">
+    <p id="welcomeMsg">Welcome to your Grievance Portal Again...., please proceed to submit your complaint </p>
+    <button onclick="closePopup()">Okkk 💌</button>
+  </div>
+</div>
+
+
+  <div id="formBox" class="container hidden">
+    <h2>Tell us about your problemm 🥺🥺</h2>
+    <form action="https://formsubmit.co/darthshadow444@gmail.com" method="POST">
+      <textarea name="grievance" placeholder="Write your grievance here..." required></textarea>
+      <br>
+      <br>
+      <label>Current Mood (1: 😞 to 10: 😊)</label>
+      <input type="range" name="mood" min="1" max="10">
+      <br>
+      <br>
+
+      <label>Severity 😠</label>
+      <select name="severity" class="cute-select" required>
+        <option value="Hmmmm">Hmmmm 😐</option>
+        <option value="Gussa">Gussa 😡</option>
+        <option value="Bohttt Gussa">Bohttt Gussa 😤</option>
+        <option value="Extremeee">Extremeee 🔥</option>
+        <option value="Aise hi felt cute">Aise hi felt cute Hehe 😚</option>
+      </select>
+
+      <input type="hidden" name="_next" value="thankyou.html">
+      <button type="submit">Send Your Grievance ✈️ </button>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
