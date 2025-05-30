@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: sans-serif; /* Changed from 'Comic Sans MS', cursive, sans-serif */
+  font-family: sans-serif; /* From previous step */
 }
 
 body {
@@ -13,25 +13,64 @@ body {
   align-items: center;
   background-color: #ffe5e5;
   padding: 2rem;
-  /* font-family: sans-serif; will be inherited from '*' */
 }
 
 .login-box {
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  width: 50%;
+  width: 50%; /* The GIF will be relative to this width */
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   margin-bottom: 2rem;
-  /* font-family will be inherited */
 }
 
+/* MODIFIED: CSS for .tenor-gif-embed in .login-box */
+.login-box .tenor-gif-embed {
+  display: block;
+  margin: 0 auto 1rem auto; /* Keeps it centered and adds bottom margin */
+  width: 100%; /* Make it take the full width of its parent (.login-box content area) */
+  max-width: 200px; /* This was its original fixed width, now it acts as a cap */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.login-box h3 {
+  margin-bottom: 1.5rem;
+}
+
+/* ... (rest of your style.css contents) ... */
+
+.popup-content {
+  background-color: #fff0f6;
+  padding: 3rem 4rem;
+  border-radius: 25px;
+  box-shadow: 0 8px 30px rgba(214, 51, 108, 0.25);
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #d6336c;
+}
+
+.thankyou-container { /* In style.css, primarily for index.html if it ever uses it,
+                         thankyou.html has its own more specific inline style for .thankyou-container */
+  background: #fff0f6;
+  padding: 2rem;
+  border-radius: 15px;
+  width: 50%;
+  margin: 5rem auto;
+  text-align: center;
+  color: #d6336c;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure other styles are present as per your file */
 .login-box input, .login-box button {
   width: 80%;
   margin-top: 1rem;
   padding: 0.75rem;
-  font-size: 1rem; /* font-family will be inherited */
+  font-size: 1rem;
   border-radius: 8px;
   border: 1px solid #ccc;
 }
@@ -45,40 +84,23 @@ body {
 
 body.popup-active > *:not(#popup) {
   filter: blur(5px);
-  pointer-events: none; /* disable clicks behind popup */
-  user-select: none; /* prevent text selection */
+  pointer-events: none;
+  user-select: none;
 }
 
-/* Full screen overlay with translucent background */
 .popup {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(255, 255, 255, 0.6); /* translucent white */
+  background-color: rgba(255, 255, 255, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10000;
 }
 
-/* Popup box */
-.popup-content {
-  background-color: #fff0f6;
-  padding: 3rem 4rem;
-  border-radius: 25px;
-  box-shadow: 0 8px 30px rgba(214, 51, 108, 0.25);
-  max-width: 500px;
-  width: 90%;
-  text-align: center;
-  /* font-family: 'Comic Sans MS', cursive, sans-serif; -- Removed, will inherit from * */
-  font-size: 1.3rem;
-  line-height: 1.8;
-  color: #d6336c;
-}
-
-/* Button styling */
 .popup-content button {
   margin-top: 2.5rem;
   background-color: #ff85a2;
@@ -90,7 +112,6 @@ body.popup-active > *:not(#popup) {
   cursor: pointer;
   transition: background-color 0.3s ease;
   box-shadow: 0 4px 12px rgba(255, 133, 162, 0.6);
-  /* font-family will be inherited */
 }
 
 .popup-content button:hover {
@@ -104,35 +125,34 @@ body.popup-active > *:not(#popup) {
 
 .container {
   background-color: #fff0f6;
-  padding: 2.5rem 2rem;        /* slight vertical padding increase */
+  padding: 2.5rem 2rem;
   border-radius: 15px;
-  width: 400px;                /* reduced width for better centering */
+  width: 400px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   margin-bottom: 3rem;
   text-align: center;
-  min-height: 600px;           /* taller container */
+  min-height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
-  /* font-family will be inherited */
 }
 
 .container form textarea {
-  width: 100%;                /* fill container width */
-  height: 140px;              /* taller textarea */
+  width: 100%;
+  height: 140px;
   padding: 1rem;
   margin-top: 1rem;
   border-radius: 10px;
   border: 1px solid #ccc;
-  font-size: 1rem;            /* font-family will be inherited */
+  font-size: 1rem;
   resize: vertical;
 }
 
 .container form input[type='range'] {
-  width: 80%;                 /* narrower slider */
+  width: 80%;
   margin-top: 0.5rem;
-  height: 8px;                /* thinner slider */
+  height: 8px;
   border-radius: 5px;
 }
 
@@ -140,15 +160,14 @@ body.popup-active > *:not(#popup) {
   background-color: #ff85a2;
   color: white;
   border: none;
-  padding: 0.75rem 1.8rem;    /* slightly wider button */
+  padding: 0.75rem 1.8rem;
   margin-top: 1.5rem;
   border-radius: 10px;
-  font-size: 1rem;             /* font-family will be inherited */
+  font-size: 1rem;
   cursor: pointer;
   max-width: 220px;
   align-self: center;
 }
-
 
 .cute-select {
   width: 80%;
@@ -157,28 +176,6 @@ body.popup-active > *:not(#popup) {
   margin-top: 0.5rem;
   border: 1px solid #ccc;
   background-color: #fff0f6;
-  font-size: 1rem;             /* font-family will be inherited */
+  font-size: 1rem;
   color: #333;
-}
-
-.login-box .tenor-gif-embed {
-  display: block;
-  margin: 0 auto 1rem auto;
-}
-
-.login-box h3 {
-  margin-bottom: 1.5rem;
-  /* font-family will be inherited */
-}
-
-.thankyou-container { /* This rule is in style.css */
-  background: #fff0f6;
-  padding: 2rem;
-  border-radius: 15px;
-  width: 50%;
-  margin: 5rem auto;
-  text-align: center;
-  /* font-family: 'Comic Sans MS', cursive, sans-serif; -- Removed, will inherit from * */
-  color: #d6336c;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
