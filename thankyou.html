@@ -13,30 +13,30 @@
       width: 50%;
       margin: 5rem auto;
       text-align: center;
-      font-family: sans-serif; /* Changed from 'Comic Sans MS', cursive, sans-serif */
+      font-family: sans-serif; /* From previous step */
       color: #d6336c;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     }
 
-    /* Center and enlarge the gif */
+    /* MODIFIED: CSS for .tenor-gif-embed in thankyou.html */
     .tenor-gif-embed {
       margin: 1.5rem auto;
       display: block;
-      width: 300px !important;  /* bigger width */
-      height: auto !important;  /* keep aspect ratio */
+      width: 100%; /* Allow it to take the full width of its parent */
+      max-width: 300px;  /* Set a maximum width (original fixed width) */
+      height: auto;  /* Maintain aspect ratio */
     }
 
     .thankyou-container p {
       font-size: 1.2rem;
       margin-top: 1rem;
-      /* font-family will be inherited */
     }
   </style>
 </head>
 <body>
   <div class="thankyou-container">
     <h2>Your complaint has been registered 🫡</h2>
-    <div class="tenor-gif-embed" data-postid="24507366" data-share-method="host" data-aspect-ratio="1.07023" data-width="300px"></div>
+    <div class="tenor-gif-embed" data-postid="24507366" data-share-method="host" data-aspect-ratio="1.07023" data-width="100%"></div>
     <p>Mr Sumit Will review your complaint at the earliest (he will think about it) and provide you with necessary resolution ☺️😇</p>
   </div>
   <script src="https://tenor.com/embed.js"></script>
